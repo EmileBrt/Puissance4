@@ -1,5 +1,6 @@
 package com.example.puissance4tcp;
 
+import javafx.collections.ObservableMap;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -7,6 +8,8 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -29,15 +32,8 @@ public class Controller_local {
     }
 
     @FXML
-    void OnClickGridRow(MouseEvent event) {
-        System.out.println("Bonjour");
-
-    }
-
-    @FXML
-    void Play_Local(ActionEvent event) {
-        System.out.println("Bonjour");
-
+    void OnClickPane(MouseEvent event) {
+        System.out.println("Clicked ON");
     }
 
 }

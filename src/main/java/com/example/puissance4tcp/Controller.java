@@ -22,7 +22,6 @@ public class Controller {
     @FXML
     void GoToLocalGame(ActionEvent event) throws IOException {
         System.out.println("GO TO LOCAL");
-
         FXMLLoader loader = new FXMLLoader(getClass().getResource("puissance4_view_LOCAL.fxml"));
         root = loader.load();
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();

@@ -53,6 +53,7 @@
                   <Image url="@grille.png" />
                </image>
             </ImageView>
+            <Label layoutX="66.0" layoutY="40.0" text="LOCAL" />
             <GridPane layoutX="155.0" layoutY="14.0" prefHeight="282.0" prefWidth="329.0">
               <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -64,28 +65,23 @@
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
               </columnConstraints>
               <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Pane onMouseClicked="#OnClickGridRow" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowSpan="6" />
-                  <Pane onMouseClicked="#OnClickGridRow" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowSpan="6" />
-                  <Pane onMouseClicked="#OnClickGridRow" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="3" GridPane.rowSpan="6" />
-                  <Pane onMouseClicked="#OnClickGridRow" prefHeight="200.0" prefWidth="200.0" GridPane.rowSpan="6" />
-                  <Pane onMouseClicked="#OnClickGridRow" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowSpan="6" />
-                  <Pane onMouseClicked="#OnClickGridRow" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowSpan="6" />
-                  <Pane onMouseClicked="#OnClickGridRow" prefHeight="282.0" prefWidth="62.0" GridPane.columnIndex="6" GridPane.rowSpan="6" />
+                  <Pane onMouseClicked="#OnClickPane" prefHeight="200.0" prefWidth="200.0" GridPane.rowSpan="6" />
+                  <Pane onMouseClicked="#OnClickPane" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowSpan="6" />
+                  <Pane onMouseClicked="#OnClickPane" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowSpan="6" />
+                  <Pane onMouseClicked="#OnClickPane" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowSpan="6" />
+                  <Pane onMouseClicked="#OnClickPane" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowSpan="6" />
+                  <Pane onMouseClicked="#OnClickPane" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowSpan="6" />
+                  <Pane onMouseClicked="#OnClickPane" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="6" GridPane.rowSpan="6" />
                </children>
             </GridPane>
-            <Label layoutX="66.0" layoutY="40.0" text="LOCAL" />
-            <Button layoutX="59.0" layoutY="164.0" mnemonicParsing="false" onAction="#Play_Local" text="PLAY" />
       </children>
     </AnchorPane>
   </children>
