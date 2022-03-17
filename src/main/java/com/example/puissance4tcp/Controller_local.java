@@ -11,44 +11,42 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
-
 import java.io.IOException;
+import java.io.InputStream;
+import java.util.Objects;
 
 public class Controller_local {
 
-    private Stage stage;
-    private Scene scene;
-    private Parent root ;
-
     @FXML
-    public GridPane grid;
-
+    private GridPane grid;
 
     @FXML
     void Menu(ActionEvent event) throws IOException {
         System.out.println("GO TO LOCAL");
-
-        root = FXMLLoader.load(getClass().getResource("puissance4_menu.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
+        Parent root = FXMLLoader.load(getClass().getResource("puissance4_menu.fxml"));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-
     }
 
     @FXML
-    void OnClickPane(MouseEvent event) throws IOException {
-        System.out.println("Clicked ON");
-        Display_Piece(0,0);
+    void OnClickPane(ActionEvent event) {
+        System.out.println("Clicked On");
+        Node node = (Node) event.getTarget();
+        System.out.println(node.getProperties().get("gridpane-column"));
     }
 
-    void Display_Piece(int i,int j) throws IOException {
-        Image red = new Image("C:\\Users\\Emile\\IdeaProjects\\Puissance4\\src\\main\\resources\\com\\example\\puissance4tcp\\red.png");
-        ImageView redView = new ImageView(red);
-        grid.add(redView,i,j);
-
+    void Put_On_Grid(int i, int j, int joueur){
+        InputStream input;
+        if(joueur == 1){
+            input = getClass().getResourceAsStream("JJP4.png");
+        }
+        else {
+            input = getClass().getResourceAsStream("JRP4.png");
+        }
+        Image image = new Image(input, 50, 50,false,true);
+        ImageView imv = new ImageView(image);
+        grid.add(imv,i,j,1,1);
     }
-
-
 }
-
