@@ -3,6 +3,7 @@ package com.example.board;
 public class Board {
     public Grille grille;
     public int To_Play;
+    private Object NullPointerException;
 
     public Board(){
         this.To_Play = 1;
@@ -21,11 +22,39 @@ public class Board {
                     break;
                 }
             }
-            this.To_Play = 3 - this.To_Play; // fonction verifiant f(1)=2 & f(2) = 1 Thanks Math;
+            this.To_Play = 3 - this.To_Play; // Changement de Joueur && fonction vérifiant f(1)=2 & f(2) = 1 Thanks Math;
         }
         else {
             System.out.println("Not Yout time to Play CHEATER!");
         }
+    }
+
+    public Boolean Playable(int colonne){
+        int cmp = 0;
+        for(int i= 0 ; i < this.grille.hauteur; i ++){
+            if(this.grille.matrice[i][colonne] != NullPointerException){
+                cmp += 1;
+            }
+        }
+        if(cmp == this.grille.hauteur){
+            return Boolean.FALSE;
+        }
+        else {
+            return Boolean.TRUE;
+        }
+    }
+
+    public int Next_Row(int colonne){
+        int res = 0;
+        for(int i= this.grille.hauteur - 1 ; i != 0 ; i --){
+            if(this.grille.matrice[i][colonne] == null){
+                res = i;
+                break;
+            }
+        }
+        System.out.println("Next Row");
+        System.out.println(res);
+        return res ;
     }
 
     public int Win(){
@@ -130,7 +159,6 @@ public class Board {
         return 0;
     }
 
-
     public static void main(String[] args) {
         Board board = new Board();
         System.out.println(board);
@@ -140,7 +168,5 @@ public class Board {
         System.out.println(board.Win());
 
     }
-
-
 
 }
