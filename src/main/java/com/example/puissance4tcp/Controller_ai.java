@@ -13,8 +13,6 @@ public class Controller_ai extends ControllerABC{
 
     @FXML
     void OnClickPane(ActionEvent event) throws InterruptedException {
-        System.out.println("Clicked On");
-
         Node node = (Node) event.getTarget();
         int col = 0;
         try{
