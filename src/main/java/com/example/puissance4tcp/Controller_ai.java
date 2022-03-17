@@ -1,44 +1,54 @@
 package com.example.puissance4tcp;
-
+import com.example.board.Board;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.input.MouseEvent;
-import javafx.stage.Stage;
+import javafx.scene.control.Alert;
 
-import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
-public class Controller_ai {
-    private Stage stage;
-    private Scene scene;
-    private Parent root;
+public class Controller_ai extends ControllerABC{
+
+    Board board = new Board();
 
     @FXML
-    void Menu(ActionEvent event) throws IOException {
-        System.out.println("GO TO LOCAL");
+    void OnClickPane(ActionEvent event) throws InterruptedException {
+        System.out.println("Clicked On");
 
-        root = FXMLLoader.load(getClass().getResource("puissance4_menu.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        Node node = (Node) event.getTarget();
+        int col = 0;
+        try{
+            col = Integer.parseInt(node.getProperties().get("gridpane-column").toString());
+        }
+        catch (Exception ignored){}
+        System.out.printf("Colonne %d Ligne %d%n",col,board.Next_Row(col));
 
+        if(board.Playable(col) == Boolean.TRUE){
+            Put_On_Grid(col,board.Next_Row(col), board.To_Play);
+            board.Play_Piece(col,board.To_Play);
+        }
+        else {
+            System.out.println("Le Colonne est pleine");
+        }
+
+        TimeUnit.MILLISECONDS.sleep(200);
+        int rd = (int)(Math.random() * 7);
+        while(board.Playable(rd) != Boolean.TRUE){
+            rd = (int)(Math.random() * 7);
+        }
+        Put_On_Grid(rd,board.Next_Row(rd), board.To_Play);
+        board.Play_Piece(rd,board.To_Play);
+        TimeUnit.MILLISECONDS.sleep(200);
+
+
+        if(board.Win() != 0){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Partie Terminée");
+            alert.setHeaderText(null);
+            alert.setContentText(
+                    String.format("Le joueur %d a remporté la partie,\n pour rejouer, retourner à l'écran d'acceuil",board.Win())
+            );
+            alert.showAndWait();
+        }
     }
-
-    @FXML
-    void OnClickGridRow(MouseEvent event) {
-        System.out.println("Bonjour");
-
-    }
-
-    @FXML
-    void Play_AI(ActionEvent event) {
-        System.out.println("Bonjour");
-
-    }
-
 }
-

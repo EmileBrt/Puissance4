@@ -52,8 +52,6 @@ public class Board {
                 break;
             }
         }
-        System.out.println("Next Row");
-        System.out.println(res);
         return res ;
     }
 
