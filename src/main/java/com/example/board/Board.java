@@ -13,7 +13,11 @@ public class Board {
     public String toString(){
         return this.grille.toString();
     }
-
+    /**
+     * Si un Joueur joue alors que ce n'est pas son tour,
+     *celui-ci n'est pas pris en compte est un message est affiche en terminale.
+     *Joue la piece dans matrice de la variable grille.
+     */
     public void Play_Piece(int colonne,int player){
         if(player == this.To_Play){
             for(int i = 0; i < this.grille.hauteur;i++){
