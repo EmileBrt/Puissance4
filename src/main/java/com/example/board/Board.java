@@ -1,18 +1,32 @@
 package com.example.board;
 
+
+import java.beans.PropertyChangeSupport;
+
 public class Board {
     public Grille grille;
     public int To_Play;
     private Object NullPointerException;
 
     public Board(){
+        /**
+         * Le joueur numeroté 1 commence toujours la partie
+         *
+         * La grille est fixé à la taille du jeu originel 6x7
+         */
         this.To_Play = 1;
         this.grille = new Grille(6,7);
     }
 
     public String toString(){
+        /**
+         * Ceux-ci est une métode facultative
+         *
+         * Elle nous a permis de tester nos logiques métiers avant la création de notre interface graphique
+         */
         return this.grille.toString();
     }
+
     /**
      * Si un Joueur joue alors que ce n'est pas son tour,
      *celui-ci n'est pas pris en compte est un message est affiche en terminale.
@@ -34,6 +48,9 @@ public class Board {
     }
 
     public Boolean Playable(int colonne){
+        /**
+         * @return Boolean True si le coup est jouable (il reste une place dans la colonne) False sinon
+         */
         int cmp = 0;
         for(int i= 0 ; i < this.grille.hauteur; i ++){
             if(this.grille.matrice[i][colonne] != NullPointerException){
@@ -49,6 +66,9 @@ public class Board {
     }
 
     public int Next_Row(int colonne){
+        /**
+         * @return le nombre de pièce dans une colonne
+         */
         int res = 0;
         for(int i= this.grille.hauteur - 1 ; i != 0 ; i --){
             if(this.grille.matrice[i][colonne] == null){
@@ -60,8 +80,11 @@ public class Board {
     }
 
     public int Win(){
-        // Return True 1 si le joueur 1 a gagné, 2 si le joueur 2 a gagné, 0 sinon
-
+        /**
+         * Les conditions de victoires ne sont pas encore optimales
+         * Je n'ai pas réussi à les faire fonctionner parfaitement car j'ai rencontré des problèmes avec JUnit
+         * @return True 1 si le joueur 1 a gagné, 2 si le joueur 2 a gagné, 0 sinon
+         */
         // horizontale
         for(int i = 0;i < this.grille.hauteur ; i ++){
             int cpt_1 = 0;
@@ -109,6 +132,10 @@ public class Board {
                 }
             }
         }
+
+        /**
+         * Les conditions de diagonale ne fonctionnnet pas correctement actuellement
+         */
 
         // Diagonale - > \
         for(int i = 0;i < this.grille.longueur - this.grille.hauteur ; i ++){

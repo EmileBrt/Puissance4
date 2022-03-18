@@ -4,16 +4,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.Scene;
 import javafx.scene.Parent;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
-import javafx.scene.layout.Pane;
-
 import java.io.IOException;
-import java.util.Objects;
 
-public class Controller {
+
+public class Controllermenu {
 
     private Stage stage;
     private Scene scene;

@@ -33,27 +33,29 @@
 -->
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
 <VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.puissance4tcp.Controller_tcp">
   <children>
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="403.0" prefWidth="640.0" VBox.vgrow="NEVER">
       <children>
-            <Button layoutX="51.0" layoutY="109.0" mnemonicParsing="false" onAction="#Menu" text="MENU" />
+            <Button layoutX="60.0" layoutY="170.0" mnemonicParsing="false" onAction="#Menu" text="MENU" />
             <ImageView fitHeight="282.0" fitWidth="369.0" layoutX="155.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@grille.png" />
                </image>
             </ImageView>
-            <GridPane layoutX="155.0" layoutY="14.0" prefHeight="282.0" prefWidth="329.0">
+            <Label layoutX="66.0" layoutY="40.0" text="TCP" />
+            <GridPane id="grid" fx:id="grid" layoutX="246.0" layoutY="14.0" prefHeight="282.0" prefWidth="293.0">
               <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -64,28 +66,30 @@
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
               </columnConstraints>
               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="50.599981689453124" minHeight="10.0" prefHeight="47.19999389648437" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="66.60000839233399" minHeight="10.0" prefHeight="46.40000610351562" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="49.59998779296876" minHeight="10.0" prefHeight="46.40001220703127" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="57.600012207031256" minHeight="10.0" prefHeight="46.19999999999999" vgrow="SOMETIMES" />
+                <RowConstraints fillHeight="false" maxHeight="58.400000000000006" minHeight="10.0" prefHeight="47.80000610351564" vgrow="NEVER" />
+                <RowConstraints maxHeight="52.79999389648435" minHeight="10.0" prefHeight="48.79999389648435" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="52.79999389648435" minHeight="10.0" prefHeight="48.79999389648435" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="52.79999389648435" minHeight="10.0" prefHeight="48.79999389648435" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="52.79999389648435" minHeight="10.0" prefHeight="48.79999389648435" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Pane onMouseClicked="#OnClickGridRow" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowSpan="6" />
-                  <Pane onMouseClicked="#OnClickGridRow" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowSpan="6" />
-                  <Pane onMouseClicked="#OnClickGridRow" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="3" GridPane.rowSpan="6" />
-                  <Pane onMouseClicked="#OnClickGridRow" prefHeight="200.0" prefWidth="200.0" GridPane.rowSpan="6" />
-                  <Pane onMouseClicked="#OnClickGridRow" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowSpan="6" />
-                  <Pane onMouseClicked="#OnClickGridRow" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowSpan="6" />
-                  <Pane onMouseClicked="#OnClickGridRow" prefHeight="282.0" prefWidth="62.0" GridPane.columnIndex="6" GridPane.rowSpan="6" />
+                  <Button mnemonicParsing="false" onAction="#OnClickPane" prefHeight="293.0" prefWidth="47.0" style="-fx-background-color: transparent;" GridPane.rowSpan="6" />
+                  <Button mnemonicParsing="false" onAction="#OnClickPane" prefHeight="325.0" prefWidth="47.0" style="-fx-background-color: transparent;" GridPane.columnIndex="1" GridPane.columnSpan="6" GridPane.rowSpan="6" />
+                  <Button mnemonicParsing="false" onAction="#OnClickPane" prefHeight="327.0" prefWidth="47.0" style="-fx-background-color: transparent;" GridPane.columnIndex="2" GridPane.rowSpan="6" />
+                  <Button mnemonicParsing="false" onAction="#OnClickPane" prefHeight="332.0" prefWidth="54.0" style="-fx-background-color: transparent;" GridPane.columnIndex="3" GridPane.rowSpan="6" />
+                  <Button mnemonicParsing="false" onAction="#OnClickPane" prefHeight="386.0" prefWidth="47.0" style="-fx-background-color: transparent;" GridPane.columnIndex="4" GridPane.rowSpan="6" />
+                  <Button mnemonicParsing="false" onAction="#OnClickPane" prefHeight="346.0" prefWidth="47.0" style="-fx-background-color: transparent;" GridPane.columnIndex="5" GridPane.rowIndex="3" GridPane.rowSpan="6" />
+                  <Button mnemonicParsing="false" onAction="#OnClickPane" prefHeight="347.0" prefWidth="180.0" style="-fx-background-color: transparent;" GridPane.columnIndex="6" GridPane.rowSpan="6" />
                </children>
             </GridPane>
-            <Label layoutX="66.0" layoutY="40.0" text="TCP" />
-            <Button layoutX="55.0" layoutY="175.0" mnemonicParsing="false" onAction="#Play_TCP" text="PLAY" />
+            <ChoiceBox fx:id="JoueurChoice" layoutX="36.0" layoutY="327.0" prefHeight="26.0" prefWidth="101.0" />
+            <Button layoutX="437.0" layoutY="328.0" mnemonicParsing="false" onAction="#connect" text="Play" />
+            <TextField fx:id="ipadress" layoutX="155.0" layoutY="328.0" promptText="ServerTCP IP adress" />
+            <TextField fx:id="port" layoutX="320.0" layoutY="328.0" prefHeight="25.0" prefWidth="101.0" promptText="ServerTCP Port" />
       </children>
     </AnchorPane>
   </children>

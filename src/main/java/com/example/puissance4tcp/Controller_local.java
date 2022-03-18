@@ -5,9 +5,18 @@ import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
 
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
+
 public class Controller_local extends ControllerABC{
 
     Board board = new Board();
+    private PropertyChangeSupport pcSupport;
+
+    public void initialize() {
+        pcSupport =  new PropertyChangeSupport(this);;
+    }
 
     @FXML
     void OnClickPane(ActionEvent event) {

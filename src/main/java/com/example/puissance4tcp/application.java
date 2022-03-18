@@ -12,6 +12,9 @@ public class application extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
+        /**
+         * Main client de notre application
+         */
 
         FXMLLoader fxmlLoader = new FXMLLoader(application.class.getResource("puissance4_menu.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
